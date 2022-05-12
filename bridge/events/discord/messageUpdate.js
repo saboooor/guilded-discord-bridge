@@ -46,5 +46,5 @@ module.exports = async (discord, guilded, config, oldmsg, newmsg) => {
 
 	// Edit the message
 	const { channelId, id } = bridge.messages[newmsg.id];
-	guilded.messages.update(channelId, id, { content: `${nameformat}${newmsg.content}`, embeds: newmsg.embeds[0] });
+	guilded.messages.update(channelId, id, { content: `${nameformat}${newmsg.content}`, embeds: [newmsg.embeds[0]] });
 };
