@@ -17,13 +17,13 @@ module.exports = async (discord, guilded, config, message) => {
 	if (!message.member) return;
 
 	// Change the webhook channel to the bridge's channel
-	await srv.discord.webhook.edit({ channel: bridge.discord.id });
+	await srv.discord.webhook.edit({ channel: bridge.discord.channelId });
 
 	// Get the nameformat from the configs
 	const nameformat = (bridge.discord.nameformat ?? srv.discord.nameformat ?? config.discord.nameformat).replace(/{name}/g, message.member.user.name);
 
 	// Send the message	to the discord server
-	const discordmsg = await srv.discord.whclient.send({
+	const discordmsg = await srv.discord.webhook.send({
 		avatarURL: message.member.user.avatar,
 		username: nameformat,
 		content: message.content,

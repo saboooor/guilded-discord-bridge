@@ -1,4 +1,3 @@
-const D = require('discord.js');
 const G = require('guilded.js');
 const fs = require('fs');
 module.exports = async (discord, guilded, config) => {
@@ -35,12 +34,10 @@ module.exports = async (discord, guilded, config) => {
 			whclient: guilwhclient,
 		};
 
-		// Create a webhook client and inject it into the server's discord object
-		const discwhclient = new D.WebhookClient({ id: discwebhook.id, token: discwebhook.token });
+		// Inject the webhook into the server's discord object
 		srv.discord = {
 			serverId: discserver.id,
 			webhook: discwebhook,
-			whclient: discwhclient,
 		};
 
 		// Log
