@@ -13,6 +13,10 @@ discord: # This is the discord side of the config
 servers: # This is where you define the bridges
   - guilded: # This is the guilded side of the server
       serverId: "" # This is the guilded server's id
+      # create a webhook on the guilded server and get the Id and token from the URL:
+      # https://media.guilded.gg/webhooks/th1s-sh0u1d-be-th3-1d/tH1sSh0UldBetH3ToK3n
+      webhookId: "th1s-sh0u1d-be-th3-1d"
+      webhookToken: "tH1sSh0UldBetH3ToK3n"
     # nameformat: "" # This is optional (overrides the default)
     discord: # This is the discord side of the server
       serverId: "" # This is the discord server's id
@@ -34,6 +38,8 @@ servers: # This is where you define the bridges
 # You may add more servers with this format
 # - guilded:
 #     serverId: ""
+#     webhookId: "th1s-sh0u1d-be-th3-1d"
+#     webhookToken: "tH1sSh0UldBetH3ToK3n"
 #   # nameformat: ""
 #   discord:
 #     serverId: ""
